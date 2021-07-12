@@ -1,6 +1,6 @@
 package com.tahayvz.sfgdi.controller;
 
-import com.tahayvz.sfgdi.services.GreetingServiceImpl;
+import com.tahayvz.sfgdi.services.SetterInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class SetterInjectedControllerTest {
     void setUp() {
         setterInjectedController = new SetterInjectedController();
 
-        setterInjectedController.setGreetingService(new GreetingServiceImpl());
+        setterInjectedController.setGreetingService(new SetterInjectedGreetingService());
     }
 
     @Test

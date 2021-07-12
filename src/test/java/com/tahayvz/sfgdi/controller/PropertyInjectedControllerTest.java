@@ -1,10 +1,8 @@
 package com.tahayvz.sfgdi.controller;
 
-import com.tahayvz.sfgdi.services.GreetingServiceImpl;
+import com.tahayvz.sfgdi.services.PropertyInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectedControllerTest {
 
@@ -14,7 +12,7 @@ class PropertyInjectedControllerTest {
     void setUp() {
         propertyInjectedController =new PropertyInjectedController();
 
-        propertyInjectedController.greetingService = new GreetingServiceImpl();
+        propertyInjectedController.greetingService = new PropertyInjectedGreetingService();
     }
 
     @Test
