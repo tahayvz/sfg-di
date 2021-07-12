@@ -3,7 +3,7 @@ package com.tahayvz.sfgdi.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("TR")
+@Profile({"TR", "default"})
 @Service("i18nService")
 public class I18NTurkishGreetingService implements GreetingService{
 
