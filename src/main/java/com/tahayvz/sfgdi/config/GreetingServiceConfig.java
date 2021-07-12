@@ -1,5 +1,7 @@
 package com.tahayvz.sfgdi.config;
 
+import com.tahayvz.sfgdi.repositories.EnglishGreetingRepository;
+import com.tahayvz.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import com.tahayvz.sfgdi.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,10 +23,15 @@ public class GreetingServiceConfig {
         return new I18NSpanishGreetingService();
     }
 
+    @Bean
+    EnglishGreetingRepository englishGreetingRepository(){
+        return new EnglishGreetingRepositoryImpl();
+    }
+
     @Profile("EN")
     @Bean("i18nService")
-    I18nEnglishGreetingService i18nEnglishGreetingService(){
-        return new I18nEnglishGreetingService();
+    I18nEnglishGreetingService i18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository){
+        return new I18nEnglishGreetingService(englishGreetingRepository);
     }
 
     @Primary
