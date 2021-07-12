@@ -4,7 +4,9 @@ import com.tahayvz.sfgdi.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = {"com.tahayvz.sfgdi", "com.tahayvz.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 

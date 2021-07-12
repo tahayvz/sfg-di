@@ -1,4 +1,4 @@
-package com.tahayvz.sfgdi.services;
+package com.tahayvz.pets;
 
 public interface PetService {
 

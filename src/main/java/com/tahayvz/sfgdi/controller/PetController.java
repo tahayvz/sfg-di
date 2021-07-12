@@ -1,6 +1,6 @@
 package com.tahayvz.sfgdi.controller;
 
-import com.tahayvz.sfgdi.services.PetService;
+import com.tahayvz.pets.PetService;
 import org.springframework.stereotype.Controller;
 
 @Controller
