@@ -7,8 +7,10 @@ import com.tahayvz.sfgdi.repositories.EnglishGreetingRepository;
 import com.tahayvz.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import com.tahayvz.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
+@EnableConfigurationProperties(SfgConstructorConfig.class)
 //@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
@@ -22,11 +24,19 @@ public class GreetingServiceConfig {
 //        fakeDataSource.setUsername(username);
 //        fakeDataSource.setPassword(password);
 //        fakeDataSource.setJdbcurl(jdbcurl);
-    FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration){
+
+//    FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration){
+//        FakeDataSource fakeDataSource = new FakeDataSource();
+//        fakeDataSource.setUsername(sfgConfiguration.getUsername());
+//        fakeDataSource.setPassword(sfgConfiguration.getPassword());
+//        fakeDataSource.setJdbcurl(sfgConfiguration.getJdbcurl());
+
+    FakeDataSource fakeDataSource(SfgConstructorConfig sfgConstructorConfig){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(sfgConfiguration.getUsername());
-        fakeDataSource.setPassword(sfgConfiguration.getPassword());
-        fakeDataSource.setJdbcurl(sfgConfiguration.getJdbcurl());
+        fakeDataSource.setUsername(sfgConstructorConfig.getUsername());
+        fakeDataSource.setPassword(sfgConstructorConfig.getPassword());
+        fakeDataSource.setJdbcurl(sfgConstructorConfig.getJdbcurl());
+
         return fakeDataSource;
     }
 

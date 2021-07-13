@@ -1,6 +1,7 @@
 package com.tahayvz.sfgdi;
 
 import com.tahayvz.sfgdi.config.SfgConfiguration;
+import com.tahayvz.sfgdi.config.SfgConstructorConfig;
 import com.tahayvz.sfgdi.controller.*;
 import com.tahayvz.sfgdi.datasource.FakeDataSource;
 import com.tahayvz.sfgdi.services.PrototypeBean;
@@ -63,6 +64,12 @@ public class SfgDiApplication {
 		System.out.println(sfgConfiguration.getUsername());
 		System.out.println(sfgConfiguration.getPassword());
 		System.out.println(sfgConfiguration.getJdbcurl());
+
+		System.out.println("---------- Constuctor Binding");
+		SfgConstructorConfig sfgConstructorConfig = ctx.getBean(SfgConstructorConfig.class);
+		System.out.println(sfgConstructorConfig.getUsername());
+		System.out.println(sfgConstructorConfig.getPassword());
+		System.out.println(sfgConstructorConfig.getJdbcurl());
 
 	}
 
