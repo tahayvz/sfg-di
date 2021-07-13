@@ -44,13 +44,13 @@ public class GreetingServiceConfig {
     }
 
     @Profile({"TR", "default"})
-    @Bean("i18NTurkishGreetingService")
+    @Bean("i18nService")
     I18NTurkishGreetingService i18NTurkishGreetingService(){
         return new I18NTurkishGreetingService();
     }
 
     @Profile("ES")
-    @Bean("i18nService")
+    @Bean("i18nSpanishService")
     I18NSpanishGreetingService i18NSpanishService(){
         return new I18NSpanishGreetingService();
     }
@@ -61,7 +61,7 @@ public class GreetingServiceConfig {
     }
 
     @Profile("EN")
-    @Bean("i18nService")
+    @Bean("i18nEnglishService")
     I18nEnglishGreetingService i18nEnglishGreetingService(EnglishGreetingRepository englishGreetingRepository){
         return new I18nEnglishGreetingService(englishGreetingRepository);
     }
