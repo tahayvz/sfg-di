@@ -1,5 +1,6 @@
 package com.tahayvz.sfgdi;
 
+import com.tahayvz.sfgdi.config.SfgConfiguration;
 import com.tahayvz.sfgdi.controller.*;
 import com.tahayvz.sfgdi.datasource.FakeDataSource;
 import com.tahayvz.sfgdi.services.PrototypeBean;
@@ -45,15 +46,24 @@ public class SfgDiApplication {
 		SingletonBean singletonBean2 = ctx.getBean(SingletonBean.class);
 		System.out.println(singletonBean2.getMyScope());
 
+		System.out.println("--------- Prototype Bean:");
 		PrototypeBean prototypeBean1 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean1.getMyScope());
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
 
+		System.out.println("--------- Fake Data Source:");
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+		System.out.println("--------- Config Props Bean");
+		SfgConfiguration sfgConfiguration = ctx.getBean(SfgConfiguration.class);
+		System.out.println(sfgConfiguration.getUsername());
+		System.out.println(sfgConfiguration.getPassword());
+		System.out.println(sfgConfiguration.getJdbcurl());
+
 	}
 
 }
